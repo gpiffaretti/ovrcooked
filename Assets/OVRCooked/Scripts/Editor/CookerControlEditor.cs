@@ -17,7 +17,7 @@ public class CookerControlEditor : Editor
     public override void OnInspectorGUI()
     {
 
-        EditorGUILayout.LabelField(new GUIContent($"Intensity:"), new GUIContent(serializedObject.FindProperty("intensity").floatValue.ToString()));
+        EditorGUILayout.LabelField(new GUIContent($"Rotation:"), new GUIContent(serializedObject.FindProperty("controlRotation").floatValue.ToString()));
         EditorGUILayout.LabelField(new GUIContent($"Is on:"), new GUIContent(serializedObject.FindProperty("isOn").boolValue.ToString()));
         
         base.OnInspectorGUI();
