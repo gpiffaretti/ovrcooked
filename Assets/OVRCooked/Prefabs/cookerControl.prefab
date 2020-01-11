@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6159702283746968832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.28, z: -0}
-  m_LocalScale: {x: 0.1, y: 0.8, z: 0.8}
+  m_LocalPosition: {x: 0, y: 1.28, z: -0.283}
+  m_LocalScale: {x: 0.1, y: 0.8, z: 0.32}
   m_Children: []
   m_Father: {fileID: 8131968008312419935}
   m_RootOrder: 0
@@ -138,6 +138,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8dfd62e5f6f64448919b886c6715f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fire: {fileID: 0}
+  minRotationAngle: 0
+  maxRotationAngle: 270
+  turnOnAngle: 60
 --- !u!54 &378790041427560261
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -152,7 +156,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 62
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!114 &7245479208404008466
 MonoBehaviour:

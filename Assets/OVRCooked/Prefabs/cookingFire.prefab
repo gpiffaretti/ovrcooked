@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 0
 --- !u!4 &6999498094831335235
 Transform:
@@ -9377,6 +9377,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66887f6e1108e9742b53da9beb661457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOn: 0
+  intensity: 0
+  fireCollider: {fileID: -2678501024761792893}
+  fireParticles: {fileID: 7201452469818407263}
+  particleStartSizeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1.5
+      inSlope: 1.5
+      outSlope: 1.5
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 3
+      inSlope: 1.5
+      outSlope: 1.5
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!65 &-2678501024761792893
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -347,11 +347,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cooker
       objectReference: {fileID: 0}
-    - target: {fileID: 7926892159295327444, guid: 1332ebe3aed44d9428ba60fb0a6071b3,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1332ebe3aed44d9428ba60fb0a6071b3, type: 3}
 --- !u!1001 &1266461845
