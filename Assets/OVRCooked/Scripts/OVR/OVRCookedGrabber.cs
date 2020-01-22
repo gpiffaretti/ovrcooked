@@ -5,6 +5,8 @@ using UnityEngine;
 public class OVRCookedGrabber : OVRGrabber
 {
 
+    OVRCookedGrabbable m_grabbedOVRCookedObj;
+
     protected override void GrabBegin()
     {
         float closestMagSq = float.MaxValue;
@@ -46,6 +48,7 @@ public class OVRCookedGrabber : OVRGrabber
             }
 
             m_grabbedObj = closestGrabbable.GetGrabbable();
+            m_grabbedOVRCookedObj = m_grabbedObj as OVRCookedGrabbable;
 
             // get closest grabbableCollider for this Grabbable 
             // (we can get an instance of another grabbable because of OVRCopyGrabbable)
@@ -107,6 +110,29 @@ public class OVRCookedGrabber : OVRGrabber
             {
                 m_grabbedObj.transform.parent = transform;
             }
+        }
+    }
+
+    protected virtual void MoveGrabbedObject(Vector3 pos, Quaternion rot, bool forceTeleport = false)
+    {
+        if (m_grabbedObj == null)
+        {
+            return;
+        }
+
+        Rigidbody grabbedRigidbody = m_grabbedObj.grabbedRigidbody;
+        Vector3 grabbablePosition = pos + rot * m_grabbedObjectPosOff;
+        Quaternion grabbableRotation = rot * m_grabbedObjectRotOff;
+
+        if (forceTeleport)
+        {
+            if(!m_grabbedOVRCookedObj.FixedPosition) grabbedRigidbody.transform.position = grabbablePosition;
+            grabbedRigidbody.transform.rotation = grabbableRotation;
+        }
+        else
+        {
+            if (!m_grabbedOVRCookedObj.FixedPosition) grabbedRigidbody.MovePosition(grabbablePosition);
+            grabbedRigidbody.MoveRotation(grabbableRotation);
         }
     }
 

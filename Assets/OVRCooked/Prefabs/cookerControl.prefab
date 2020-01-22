@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 2228208911343653853}
   - component: {fileID: 6836945269838933232}
   - component: {fileID: 378790041427560261}
-  - component: {fileID: 7245479208404008466}
+  - component: {fileID: 3214214820862105825}
   m_Layer: 0
   m_Name: cookerControl
   m_TagString: Untagged
@@ -138,10 +138,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8dfd62e5f6f64448919b886c6715f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controlRotation: 0
+  isOn: 0
   fire: {fileID: 0}
   minRotationAngle: 0
   maxRotationAngle: 270
-  turnOnAngle: 60
+  minIntensityAngle: 45
+  maxIntensityAngle: 180
 --- !u!54 &378790041427560261
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -158,7 +161,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!114 &7245479208404008466
+--- !u!114 &3214214820862105825
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,7 +170,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6814803876593008140}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02d61468f8b77ae4b92c344bc9a600fb, type: 3}
+  m_Script: {fileID: 11500000, guid: fc9fb0441688e5b4ab5cf99c26298394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_allowOffhandGrab: 1
@@ -175,6 +178,7 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+  fixedPosition: 1
 --- !u!1 &8468234904589838725
 GameObject:
   m_ObjectHideFlags: 0
