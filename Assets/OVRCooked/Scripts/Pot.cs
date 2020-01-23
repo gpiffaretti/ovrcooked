@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,14 @@ public class Pot : MonoBehaviour
 
     private int contentCurrentIndex;
 
+    const float CookingSpeed = 0.016666f; // Speed => 1/60 seconds
+
+    private float cookProgress = 0f; // normalized cooking progress
+
+    public event Action<bool> fireChanged;
+    public event Action<IngredientType> ingredientAdded;
+    public event Action<float> cookProgressChanged;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +32,11 @@ public class Pot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (hasFire) 
+        {
+            cookProgress += CookingSpeed * Time.deltaTime;
+            cookProgressChanged?.Invoke(cookProgress); // trigger event
+        }
     }
 
     private void AddIngredient(Ingredient ingredient) 
@@ -41,12 +54,16 @@ public class Pot : MonoBehaviour
             Debug.Log($"Ingredient added!");
             content[contentCurrentIndex] = ingredientType;
             contentCurrentIndex++;
+
+            ingredientAdded?.Invoke(ingredientType); // trigger event
         }
     }
 
     private void ToggleFire(bool isOn) 
     {
         hasFire = isOn;
+
+        fireChanged?.Invoke(hasFire); // trigger event
     }
 
     private void OnTriggerEnter(Collider other)
