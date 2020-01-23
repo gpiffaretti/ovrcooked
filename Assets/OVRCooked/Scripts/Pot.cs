@@ -6,20 +6,33 @@ using UnityEngine;
 public class Pot : MonoBehaviour
 {
     [SerializeField]
+    PotUI potUIPrefab;
+
+    [SerializeField]
     IngredientType[] content;
 
     [SerializeField]
     bool hasFire;
 
+    /// <summary>
+    /// Index for next ingredient in the <content> array
+    /// </summary>
     private int contentCurrentIndex;
 
-    const float CookingSpeed = 0.016666f; // Speed => 1/60 seconds
+    public int IngredientCount { get { return contentCurrentIndex; } }
 
+    const float SecondsForCookCompletion = 40f;
+    const float CookingSpeed = 1f / SecondsForCookCompletion; // Speed => 1/seconds
+
+    private bool cookProcessStarted;
     private float cookProgress = 0f; // normalized cooking progress
 
-    public event Action<bool> fireChanged;
-    public event Action<IngredientType> ingredientAdded;
-    public event Action<float> cookProgressChanged;
+    public float CookProgress { get { return cookProgress; } }
+
+    public event Action<bool> FireChanged;
+    public event Action<IngredientType> IngredientAdded;
+    public event Action CookProgressStarted;
+    public event Action CookProgressFinished;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +40,14 @@ public class Pot : MonoBehaviour
         content = new IngredientType[3];
         contentCurrentIndex = 0;
         hasFire = false;
+
+        PotUI potUI = Instantiate<PotUI>(potUIPrefab);
+        potUI.Pot = this;
+    }
+
+    void Initialize() 
+    {
+        cookProcessStarted = false;
     }
 
     // Update is called once per frame
@@ -35,7 +56,12 @@ public class Pot : MonoBehaviour
         if (hasFire) 
         {
             cookProgress += CookingSpeed * Time.deltaTime;
-            cookProgressChanged?.Invoke(cookProgress); // trigger event
+            if (cookProgress >= 1f && IsFull()) 
+            {
+                CookProgressFinished?.Invoke();
+            }
+
+            cookProgress = Mathf.Clamp01(cookProgress);
         }
     }
 
@@ -55,7 +81,20 @@ public class Pot : MonoBehaviour
             content[contentCurrentIndex] = ingredientType;
             contentCurrentIndex++;
 
-            ingredientAdded?.Invoke(ingredientType); // trigger event
+            cookProgress = Mathf.Clamp01(cookProgress - 0.3f); // TODO: make a constant for this
+
+            IngredientAdded?.Invoke(ingredientType); // trigger event
+        }
+    }
+
+    private bool IsFull() => IngredientCount == content.Length;
+
+    private void StartCookingProcess() 
+    {
+        if (!cookProcessStarted) 
+        {
+            cookProcessStarted = true;
+            CookProgressStarted?.Invoke();
         }
     }
 
@@ -63,12 +102,17 @@ public class Pot : MonoBehaviour
     {
         hasFire = isOn;
 
-        fireChanged?.Invoke(hasFire); // trigger event
+        FireChanged?.Invoke(hasFire); // trigger event
+
+        if (hasFire && IngredientCount > 0 && cookProgress == 0f) 
+        {
+            StartCookingProcess();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("pot entered trigger");
+        //Debug.Log("pot entered trigger");
 
         if (other.gameObject.layer == LayerMask.NameToLayer("fire"))
         {
@@ -85,7 +129,7 @@ public class Pot : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("pot exit trigger");
+        //Debug.Log("pot exit trigger");
 
         if (other.gameObject.layer == LayerMask.NameToLayer("fire"))
         {
