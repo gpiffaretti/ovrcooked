@@ -25,10 +25,12 @@ public class CookingFire : MonoBehaviour
     [SerializeField]
     AnimationCurve particleStartSizeCurve;
 
+    private Pot currentPot;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        isOn = false;
     }
 
     // Update is called once per frame
@@ -42,9 +44,18 @@ public class CookingFire : MonoBehaviour
     /// </summary>
     public void SetIntensity(float normalizedIntensity) 
     {
-        intensity = normalizedIntensity;
-        fireCollider.enabled = intensity > 0f;
 
+
+        intensity = normalizedIntensity;
+
+        // hack to manually execute logic of OnTriggerExit when turning off trigger
+        if (isOn && intensity == 0f) {
+            OnTriggerDisabled();
+        }
+
+        isOn = intensity > 0f;
+        fireCollider.enabled = isOn;
+        
         // enable/disable particle system or adjust particle size based on intensity
         ParticleSystem.EmissionModule emission = fireParticles.emission;
         emission.enabled = intensity > 0f;
@@ -53,5 +64,40 @@ public class CookingFire : MonoBehaviour
         ParticleSystem.MainModule mainModule = fireParticles.main;
         mainModule.startSize = startSize;
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("potBase"))
+        {
+            currentPot = other.gameObject.GetComponentInParent<Pot>();
+            currentPot.ToggleFire(true);
+            Debug.Log("pot-fire trigger enter");
+
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("potBase"))
+        {
+            Debug.Log("pot-fire trigger exit");
+            if (currentPot != null)
+            {
+                currentPot.ToggleFire(false);
+                currentPot = null;
+            }
+            
+        }
+    }
+
+    void OnTriggerDisabled()
+    {
+        // we need to check if there's a pot when disabling, because triggers won't
+        // send the OnTriggerExit message
+        if (currentPot != null) 
+        {
+            currentPot.ToggleFire(false);
+        }
     }
 }

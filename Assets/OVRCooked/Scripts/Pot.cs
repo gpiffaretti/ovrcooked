@@ -121,7 +121,7 @@ public class Pot : MonoBehaviour
         }
     }
 
-    private void ToggleFire(bool isOn) 
+    public void ToggleFire(bool isOn) 
     {
         hasFire = isOn;
 
@@ -137,12 +137,6 @@ public class Pot : MonoBehaviour
     {
         //Debug.Log("pot entered trigger");
 
-        if (other.gameObject.layer == LayerMask.NameToLayer("fire"))
-        {
-            Debug.Log("fire trigger enter");
-            ToggleFire(true);
-        }
-
         if (other.gameObject.layer == LayerMask.NameToLayer("ingredient"))
         {
             AddIngredient(other.GetComponent<Ingredient>());
@@ -150,15 +144,4 @@ public class Pot : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        //Debug.Log("pot exit trigger");
-
-        if (other.gameObject.layer == LayerMask.NameToLayer("fire"))
-        {
-            Debug.Log("fire trigger exit");
-            ToggleFire(false);
-        }
-
-    }
 }
