@@ -78,11 +78,21 @@ public class PlateUI : MonoBehaviour
 
     private void OnContentChangedHandler(IngredientType[] ingredients)
     {
+        
+
         for (int i = 0; i < ingredientIcons.Length; i++)
         {
-            Sprite icon = GameUIManager.Instance.GetIngredientIcon(ingredients[i]);
-            ingredientIcons[i].gameObject.SetActive(true);
-            ingredientIcons[i].sprite = icon;
+            if (ingredients == null)
+            {
+                ingredientIcons[i].gameObject.SetActive(false);
+            }
+            else 
+            {
+                Sprite icon = GameUIManager.Instance.GetIngredientIcon(ingredients[i]);
+                ingredientIcons[i].gameObject.SetActive(true);
+                ingredientIcons[i].sprite = icon;
+            }
+            
         }
     }
 }

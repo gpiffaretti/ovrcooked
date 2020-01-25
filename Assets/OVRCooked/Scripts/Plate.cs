@@ -70,4 +70,14 @@ public class Plate : MonoBehaviour
         // trigger plate content changed event for UI
         ContentChanged?.Invoke(content);
     }
+
+    public void Reset()
+    {
+        foodObject.SetActive(false);
+        hasFood = false;
+        IngredientType[] content = null;
+
+        // trigger plate content changed event for UI
+        ContentChanged?.Invoke(content);
+    }
 }
