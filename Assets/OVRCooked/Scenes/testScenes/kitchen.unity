@@ -694,7 +694,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientIcons:
   - ingredient: 0
-    icon: {fileID: 21300000, guid: 6165893fb81bdd5478b5265034ca7818, type: 3}
+    icon: {fileID: 21300000, guid: ed0a23156fdce4a4f8edc3286df6528e, type: 3}
+  - ingredient: 1
+    icon: {fileID: 21300000, guid: 9012e68884d8d0540a4739b27ca45dac, type: 3}
+  - ingredient: 2
+    icon: {fileID: 21300000, guid: 98a2a0e40a483e14dbba79c3b327958e, type: 3}
 --- !u!4 &1137590584
 Transform:
   m_ObjectHideFlags: 0
@@ -775,11 +779,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cooker
-      objectReference: {fileID: 0}
-    - target: {fileID: 5516798337069311403, guid: 1332ebe3aed44d9428ba60fb0a6071b3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1332ebe3aed44d9428ba60fb0a6071b3, type: 3}
