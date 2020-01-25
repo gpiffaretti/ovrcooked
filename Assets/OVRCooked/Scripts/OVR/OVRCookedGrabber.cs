@@ -113,7 +113,7 @@ public class OVRCookedGrabber : OVRGrabber
         }
     }
 
-    protected virtual void MoveGrabbedObject(Vector3 pos, Quaternion rot, bool forceTeleport = false)
+    protected override void MoveGrabbedObject(Vector3 pos, Quaternion rot, bool forceTeleport = false)
     {
         if (m_grabbedObj == null)
         {
@@ -124,6 +124,15 @@ public class OVRCookedGrabber : OVRGrabber
         Vector3 grabbablePosition = pos + rot * m_grabbedObjectPosOff;
         Quaternion grabbableRotation = rot * m_grabbedObjectRotOff;
 
+        // account for rigidbody rotation freezes
+        Vector3 newRotationEuler = grabbableRotation.eulerAngles;
+        Vector3 originalRotationEuler = grabbedRigidbody.transform.rotation.eulerAngles;
+        RigidbodyConstraints constraints = grabbedRigidbody.constraints;
+        grabbableRotation = Quaternion.Euler(
+            constraints.HasFlag(RigidbodyConstraints.FreezeRotationX) ? originalRotationEuler.x : newRotationEuler.x,
+            constraints.HasFlag(RigidbodyConstraints.FreezeRotationY) ? originalRotationEuler.y : newRotationEuler.y,
+            constraints.HasFlag(RigidbodyConstraints.FreezeRotationZ) ? originalRotationEuler.z : newRotationEuler.z);
+        
         if (forceTeleport)
         {
             if(!m_grabbedOVRCookedObj.FixedPosition) grabbedRigidbody.transform.position = grabbablePosition;

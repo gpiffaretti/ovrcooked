@@ -14,10 +14,6 @@ public class CookerControl : MonoBehaviour
 
     public CookingFire fire;
 
-    // Control can be rotated from 0 to 270
-    public float minRotationAngle = 0f;
-    public float maxRotationAngle = 270f;
-
     public float minIntensityAngle = 45;
     public float maxIntensityAngle = 180;
 
@@ -36,7 +32,8 @@ public class CookerControl : MonoBehaviour
         controlRotation = rot.z;
 
         // hack to prevent cooker control to rotate in other axis other than Z
-        transform.localRotation = Quaternion.Euler(0, 0, controlRotation);
+        //transform.localRotation = Quaternion.Euler(0, 0, controlRotation);
+        //transform.rotation = Quaternion.LookRotation(transform.parent.forward, transform.up);
 
         // set new fire intensity
         float intensity = GetNormalizedIntensity();
