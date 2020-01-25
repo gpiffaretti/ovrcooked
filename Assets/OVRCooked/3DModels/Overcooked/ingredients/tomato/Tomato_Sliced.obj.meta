@@ -3,7 +3,12 @@ guid: 2f52c5a618b221e478c72aab5aae7606
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tomato_Sliced_0Mat
+    second: {fileID: 2100000, guid: 63033aba8e6699541857655eb3a78a54, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
