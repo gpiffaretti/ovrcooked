@@ -26,5 +26,7 @@ public class Ingredient : MonoBehaviour
 [Serializable]
 public enum IngredientType 
 {
-    Onion
+    Onion,
+    Carrot,
+    Tomato
 }
