@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class Plate : MonoBehaviour
 {
+    [SerializeField]
+    PlateUI plateUIPrefab;
 
     int layerPot;
 
@@ -25,6 +27,9 @@ public class Plate : MonoBehaviour
     {
         layerPot = LayerMask.NameToLayer("pot");
         hasFood = false;
+
+        PlateUI plateUI = Instantiate<PlateUI>(plateUIPrefab);
+        plateUI.Plate = this;
     }
 
     // Update is called once per frame

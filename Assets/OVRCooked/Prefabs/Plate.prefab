@@ -158,6 +158,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cbcec6d036154e44851f72265b2403e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plateUIPrefab: {fileID: 3559089282792562015, guid: 09f14ab5e96bb59439104b42de52d4b6,
+    type: 3}
   foodObject: {fileID: 596646163006668672}
   hasFood: 0
   content: 
