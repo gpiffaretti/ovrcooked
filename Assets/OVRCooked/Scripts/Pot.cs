@@ -21,7 +21,7 @@ public class Pot : MonoBehaviour
 
     public int IngredientCount { get { return contentCurrentIndex; } }
 
-    const float SecondsForCookCompletion = 40f;
+    const float SecondsForCookCompletion = 20f;
     const float CookingSpeed = 1f / SecondsForCookCompletion; // Speed => 1/seconds
 
     private bool cookProcessStarted;
@@ -33,13 +33,14 @@ public class Pot : MonoBehaviour
     public event Action<IngredientType> IngredientAdded;
     public event Action CookProgressStarted;
     public event Action CookProgressFinished;
+    public event Action PotReset;
 
     // Start is called before the first frame update
     void Start()
     {
-        content = new IngredientType[3];
-        contentCurrentIndex = 0;
+        
         hasFire = false;
+        Initialize();
 
         PotUI potUI = Instantiate<PotUI>(potUIPrefab);
         potUI.Pot = this;
@@ -47,7 +48,17 @@ public class Pot : MonoBehaviour
 
     void Initialize() 
     {
+        content = new IngredientType[3];
+        contentCurrentIndex = 0;
+        cookProgress = 0f;
         cookProcessStarted = false;
+
+        PotReset?.Invoke();
+    }
+
+    public void Reset() 
+    {
+        Initialize();
     }
 
     // Update is called once per frame
@@ -63,6 +74,11 @@ public class Pot : MonoBehaviour
 
             cookProgress = Mathf.Clamp01(cookProgress);
         }
+    }
+
+    public IngredientType[] GetPotContent() 
+    {
+        return content;
     }
 
     private void AddIngredient(Ingredient ingredient) 
@@ -84,10 +100,17 @@ public class Pot : MonoBehaviour
             cookProgress = Mathf.Clamp01(cookProgress - 0.3f); // TODO: make a constant for this
 
             IngredientAdded?.Invoke(ingredientType); // trigger event
+
+            if (hasFire) StartCookingProcess();
         }
     }
 
     private bool IsFull() => IngredientCount == content.Length;
+
+    public bool IsFoodReady() 
+    {
+        return IsFull() && CookProgress >= 1f;
+    }
 
     private void StartCookingProcess() 
     {
@@ -104,7 +127,7 @@ public class Pot : MonoBehaviour
 
         FireChanged?.Invoke(hasFire); // trigger event
 
-        if (hasFire && IngredientCount > 0 && cookProgress == 0f) 
+        if (hasFire && IngredientCount > 0) 
         {
             StartCookingProcess();
         }

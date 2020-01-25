@@ -18,6 +18,7 @@ public class PotUI : MonoBehaviour
             pot.FireChanged += OnFireChangedHandler;
             pot.CookProgressStarted += OnCookProgressStarted;
             pot.CookProgressFinished += OnCookProgressFinished;
+            pot.PotReset += OnPotReset;
             Inititialize();
         } 
     }
@@ -134,6 +135,18 @@ public class PotUI : MonoBehaviour
     private void OnCookProgressFinished()
     {
         cookingSlider.gameObject.SetActive(false);
+    }
+
+    private void OnPotReset()
+    {
+        cookingSlider.gameObject.SetActive(false);
+        warningIcon.gameObject.SetActive(false);
+        foreach (var ing in ingredientIcons)
+        {
+            ing.gameObject.SetActive(false);
+        }
+
+        currentIngredientIndex = 0;
     }
 
 }

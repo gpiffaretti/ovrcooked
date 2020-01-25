@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,12 +7,24 @@ using UnityEngine;
 public class Plate : MonoBehaviour
 {
 
-    int layerPot; 
+    int layerPot;
+
+    [SerializeField]
+    GameObject foodObject;
+
+    [SerializeField]
+    bool hasFood;
+
+    [SerializeField]
+    IngredientType[] content;
+
+    public event Action<IngredientType[]> ContentChanged;
 
     // Start is called before the first frame update
     void Start()
     {
         layerPot = LayerMask.NameToLayer("pot");
+        hasFood = false;
     }
 
     // Update is called once per frame
@@ -32,15 +45,24 @@ public class Plate : MonoBehaviour
     private void AttemptFoodTransfer(Pot pot)
     {
         Debug.Log($"Attempt food transfer from {pot.name}");
-
-        // check food ready
+        
+        // check empty plate and pot food ready
+        if (hasFood || !pot.IsFoodReady()) return;
 
         // check pot is tilted over plate (dot product with 'up' vectors)
-
-        // reset pot
+        bool potTilted = Vector3.Dot(pot.transform.up, Vector3.up) < 0f;
+        if (!potTilted) return;
 
         // create content in plate
+        this.content = pot.GetPotContent();
+        foodObject.SetActive(true);
+        foodObject.transform.localScale = Vector3.zero;
+        foodObject.transform.DOScale(Vector3.one, 0.3f);
+
+        // reset pot
+        pot.Reset();
 
         // trigger plate content changed event for UI
+        ContentChanged?.Invoke(content);
     }
 }
