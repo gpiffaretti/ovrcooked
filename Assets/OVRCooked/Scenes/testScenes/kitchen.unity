@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 1}
+  m_AmbientSkyColor: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -353,7 +353,7 @@ PrefabInstance:
     - target: {fileID: 8684450575437500798, guid: b20c3981a9ad33348a5a154eb2dac40a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.145
+      value: -0.815
       objectReference: {fileID: 0}
     - target: {fileID: 8684450575437500798, guid: b20c3981a9ad33348a5a154eb2dac40a,
         type: 3}
@@ -571,7 +571,7 @@ Light:
   serializedVersion: 9
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.79
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -580,7 +580,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.996
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -627,13 +627,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 941948775}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.36445332, y: 0.017199872, z: 0.00915127, w: 0.9310178}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 42.712, y: 3.019, z: 2.3070002}
 --- !u!1 &1011436343 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 195418, guid: ba1fa4a8c66106b4988c88fe4b8e8502,
@@ -1497,7 +1497,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &1829292559
 BoxCollider:
@@ -2437,7 +2437,7 @@ PrefabInstance:
     - target: {fileID: 8684450575437500798, guid: b20c3981a9ad33348a5a154eb2dac40a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.912
+      value: -0.822
       objectReference: {fileID: 0}
     - target: {fileID: 8684450575437500798, guid: b20c3981a9ad33348a5a154eb2dac40a,
         type: 3}
@@ -2447,7 +2447,7 @@ PrefabInstance:
     - target: {fileID: 8684450575437500798, guid: b20c3981a9ad33348a5a154eb2dac40a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.124
+      value: 0.038
       objectReference: {fileID: 0}
     - target: {fileID: 8684450575437500798, guid: b20c3981a9ad33348a5a154eb2dac40a,
         type: 3}
