@@ -30,3 +30,10 @@ public enum IngredientType
     Carrot,
     Tomato
 }
+
+[Serializable]
+public enum CookwareType
+{
+    Pot,
+    FryingPan
+}

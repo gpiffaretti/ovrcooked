@@ -14,26 +14,26 @@ public class RecipeDisplay : MonoBehaviour
     {
         recipeArtwork.sprite = recipe.recipeArtwork;
         
+        foreach(var ingredient in ingredients)
+        {
+            ingredient.gameObject.SetActive(false);
+        }
+
+        foreach (var cookware in cookware)
+        {
+            cookware.gameObject.SetActive(false);
+        }
+
         for (int i =0; i < ingredients.Length; i++)
         {
-            if (recipe.ingredients[i] == null)
-            {
-                ingredients[i].enabled = false;
-                continue;
-            }
-
-            ingredients[i].sprite = recipe.ingredients[i];
+            ingredients[i].sprite = GameUIManager.Instance.GetIngredientIcon(recipe.ingredients[i]);
+            ingredients[i].gameObject.SetActive(true);
         }
 
         for (int i = 0; i < cookware.Length; i++)
         {
-            if (recipe.cookware[i] == null)
-            {
-                cookware[i].enabled = false;
-                continue;
-            }
-
-            cookware[i].sprite = recipe.cookware[i];
+            cookware[i].sprite = GameUIManager.Instance.GetCookwareIcon(recipe.cookwares[i]);
+            cookware[i].gameObject.SetActive(true);
         }
     }
 }
