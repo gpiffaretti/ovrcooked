@@ -15,11 +15,5 @@ MonoBehaviour:
   name: Onion Soup
   secondsToCook: 120
   recipeArtwork: {fileID: 21300000, guid: 8976ed6c5d5993b4c8108cb6b4d86b05, type: 3}
-  ingredients:
-  - {fileID: 21300000, guid: ed0a23156fdce4a4f8edc3286df6528e, type: 3}
-  - {fileID: 21300000, guid: ed0a23156fdce4a4f8edc3286df6528e, type: 3}
-  - {fileID: 21300000, guid: ed0a23156fdce4a4f8edc3286df6528e, type: 3}
-  cookware:
-  - {fileID: 0}
-  - {fileID: 21300000, guid: e583a2ccd2c07af4cbfe400125bf2a2f, type: 3}
-  - {fileID: 0}
+  ingredients: 000000000000000000000000
+  cookwares: 00000000

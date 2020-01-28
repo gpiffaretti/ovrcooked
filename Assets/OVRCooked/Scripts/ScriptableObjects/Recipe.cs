@@ -9,6 +9,6 @@ public class Recipe : ScriptableObject
     public int secondsToCook;
 
     public Sprite recipeArtwork;
-    public Sprite[] ingredients;
-    public Sprite[] cookware;
+    public IngredientType[] ingredients;
+    public CookwareType[] cookwares;
 }
