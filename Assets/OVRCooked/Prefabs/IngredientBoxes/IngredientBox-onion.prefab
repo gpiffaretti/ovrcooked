@@ -67,6 +67,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Onion_Whole (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38e6a0d231e304d47b7b411812c2fbe6, type: 3}
 --- !u!1001 &3190357925516939601
@@ -135,6 +155,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Onion_Whole (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38e6a0d231e304d47b7b411812c2fbe6, type: 3}
@@ -274,6 +314,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Onion_Whole (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38e6a0d231e304d47b7b411812c2fbe6, type: 3}
 --- !u!1001 &3476530357336935297
@@ -342,6 +402,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Onion_Whole (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38e6a0d231e304d47b7b411812c2fbe6, type: 3}
@@ -412,6 +492,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Onion_Whole (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38e6a0d231e304d47b7b411812c2fbe6, type: 3}
 --- !u!1001 &5857545416557620018
@@ -480,6 +580,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Onion_Whole (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38e6a0d231e304d47b7b411812c2fbe6, type: 3}
@@ -550,6 +670,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Onion_Whole (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38e6a0d231e304d47b7b411812c2fbe6, type: 3}
 --- !u!1001 &7989655147361748822
@@ -618,6 +758,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Onion_Whole (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38e6a0d231e304d47b7b411812c2fbe6, type: 3}
@@ -773,6 +933,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Onion_Whole (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774503890570517541, guid: 38e6a0d231e304d47b7b411812c2fbe6,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38e6a0d231e304d47b7b411812c2fbe6, type: 3}

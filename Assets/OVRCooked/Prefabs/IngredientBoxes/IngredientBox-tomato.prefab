@@ -82,6 +82,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tomato_Sliced (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f52c5a618b221e478c72aab5aae7606, type: 3}
 --- !u!1001 &1243727736684036577
@@ -166,6 +186,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tomato_Sliced (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f52c5a618b221e478c72aab5aae7606, type: 3}
 --- !u!1001 &1964845733188600125
@@ -234,6 +274,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tomato_Sliced (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f52c5a618b221e478c72aab5aae7606, type: 3}
@@ -319,6 +379,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tomato_Sliced (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f52c5a618b221e478c72aab5aae7606, type: 3}
 --- !u!1001 &3517474796188909374
@@ -387,6 +467,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tomato_Sliced
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f52c5a618b221e478c72aab5aae7606, type: 3}
@@ -471,6 +571,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tomato_Sliced (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f52c5a618b221e478c72aab5aae7606, type: 3}
@@ -642,6 +762,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tomato_Sliced (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f52c5a618b221e478c72aab5aae7606, type: 3}
 --- !u!1001 &8990404591704321998
@@ -726,6 +866,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tomato_Sliced (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f52c5a618b221e478c72aab5aae7606, type: 3}
 --- !u!1001 &9112511204916955138
@@ -809,6 +969,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tomato_Sliced (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175734481365612373, guid: 2f52c5a618b221e478c72aab5aae7606,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f52c5a618b221e478c72aab5aae7606, type: 3}

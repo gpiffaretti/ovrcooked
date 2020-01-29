@@ -7,6 +7,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1529924518727732893}
     m_Modifications:
+    - target: {fileID: -8804770717465899335, guid: 6f69f320153c31d4f8f994a7a6fa0571,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8804770717465899335, guid: 6f69f320153c31d4f8f994a7a6fa0571,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8804770717465899335, guid: 6f69f320153c31d4f8f994a7a6fa0571,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8804770717465899335, guid: 6f69f320153c31d4f8f994a7a6fa0571,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6f69f320153c31d4f8f994a7a6fa0571,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -76,6 +96,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1529924518727732893}
     m_Modifications:
+    - target: {fileID: -8804770717465899335, guid: 6f69f320153c31d4f8f994a7a6fa0571,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8804770717465899335, guid: 6f69f320153c31d4f8f994a7a6fa0571,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8804770717465899335, guid: 6f69f320153c31d4f8f994a7a6fa0571,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8804770717465899335, guid: 6f69f320153c31d4f8f994a7a6fa0571,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6f69f320153c31d4f8f994a7a6fa0571,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -145,6 +185,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1529924518727732893}
     m_Modifications:
+    - target: {fileID: -8804770717465899335, guid: 6f69f320153c31d4f8f994a7a6fa0571,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8804770717465899335, guid: 6f69f320153c31d4f8f994a7a6fa0571,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8804770717465899335, guid: 6f69f320153c31d4f8f994a7a6fa0571,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8804770717465899335, guid: 6f69f320153c31d4f8f994a7a6fa0571,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6f69f320153c31d4f8f994a7a6fa0571,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -214,6 +274,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1529924518727732893}
     m_Modifications:
+    - target: {fileID: -8804770717465899335, guid: 6f69f320153c31d4f8f994a7a6fa0571,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8804770717465899335, guid: 6f69f320153c31d4f8f994a7a6fa0571,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8804770717465899335, guid: 6f69f320153c31d4f8f994a7a6fa0571,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8804770717465899335, guid: 6f69f320153c31d4f8f994a7a6fa0571,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6f69f320153c31d4f8f994a7a6fa0571,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -283,6 +363,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1529924518727732893}
     m_Modifications:
+    - target: {fileID: -8804770717465899335, guid: 6f69f320153c31d4f8f994a7a6fa0571,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8804770717465899335, guid: 6f69f320153c31d4f8f994a7a6fa0571,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8804770717465899335, guid: 6f69f320153c31d4f8f994a7a6fa0571,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8804770717465899335, guid: 6f69f320153c31d4f8f994a7a6fa0571,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6f69f320153c31d4f8f994a7a6fa0571,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -352,6 +452,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1529924518727732893}
     m_Modifications:
+    - target: {fileID: -8804770717465899335, guid: 6f69f320153c31d4f8f994a7a6fa0571,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8804770717465899335, guid: 6f69f320153c31d4f8f994a7a6fa0571,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8804770717465899335, guid: 6f69f320153c31d4f8f994a7a6fa0571,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8804770717465899335, guid: 6f69f320153c31d4f8f994a7a6fa0571,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6f69f320153c31d4f8f994a7a6fa0571,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -421,6 +541,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4553514033088651610, guid: 3c33dad21364a6544a07dc592bd66b60,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4553514033088651610, guid: 3c33dad21364a6544a07dc592bd66b60,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4553514033088651610, guid: 3c33dad21364a6544a07dc592bd66b60,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4553514033090920346, guid: 3c33dad21364a6544a07dc592bd66b60,
         type: 3}
       propertyPath: m_IsActive
