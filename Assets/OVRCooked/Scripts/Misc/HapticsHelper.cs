@@ -5,7 +5,7 @@ using UnityEngine;
 public class HapticsHelper
 {
 
-    private static readonly float[] durations = { 0.1f, 0.2f, 0.35f, 0.5f, 7f };
+    private static readonly float[] durations = { 0.05f, 0.1f, 0.25f, 0.4f, 0.55f };
     private static readonly float[] amplitudes = { 0.2f, 0.4f, 0.6f, 0.8f, 1f };
     private static readonly float[] frequencies = { 0.2f, 0.4f, 0.6f, 0.8f, 1f };
 

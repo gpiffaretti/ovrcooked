@@ -125,9 +125,9 @@ public class OVRCookedGrabber : OVRGrabber
             HapticsHelper.Vibration(
                 this, 
                 m_controller, 
-                HapticsHelper.Duration.VeryShort, 
-                HapticsHelper.Frequency.VeryLow, 
-                HapticsHelper.Amplitude.VeryLow);
+                HapticsHelper.Duration.Short, 
+                HapticsHelper.Frequency.Medium, 
+                HapticsHelper.Amplitude.Low);
 
             if (m_grabbedOVRCookedObj.PlayPickUpSound) 
             {
