@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 549800700}
   - component: {fileID: 2191077346325975061}
   m_Layer: 0
-  m_Name: Cooker
+  m_Name: StoveStation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -520,11 +520,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: fireTopLeft
       objectReference: {fileID: 0}
-    - target: {fileID: 7004457615291894717, guid: 16c414478709046408c6d1e15ff170e7,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 7006529173594290861, guid: 16c414478709046408c6d1e15ff170e7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -579,21 +574,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7006529173594290861, guid: 16c414478709046408c6d1e15ff170e7,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.089861654
-      objectReference: {fileID: 0}
-    - target: {fileID: 7006529173594290861, guid: 16c414478709046408c6d1e15ff170e7,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.08986174
-      objectReference: {fileID: 0}
-    - target: {fileID: 7006529173594290861, guid: 16c414478709046408c6d1e15ff170e7,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.08986174
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16c414478709046408c6d1e15ff170e7, type: 3}

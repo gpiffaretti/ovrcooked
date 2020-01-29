@@ -2,10 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class OVRCookedGrabber : OVRGrabber
 {
 
     OVRCookedGrabbable m_grabbedOVRCookedObj;
+    AudioSource audioSource;
+
+    [SerializeField]
+    AudioClip pickUpSound;
+
+    protected override void Start() 
+    {
+        base.Start();
+        audioSource = GetComponent<AudioSource>();
+    }
 
     protected override void GrabBegin()
     {
@@ -109,6 +120,18 @@ public class OVRCookedGrabber : OVRGrabber
             if (m_parentHeldObject)
             {
                 m_grabbedObj.transform.parent = transform;
+            }
+
+            HapticsHelper.Vibration(
+                this, 
+                m_controller, 
+                HapticsHelper.Duration.VeryShort, 
+                HapticsHelper.Frequency.VeryLow, 
+                HapticsHelper.Amplitude.VeryLow);
+
+            if (m_grabbedOVRCookedObj.PlayPickUpSound) 
+            {
+                audioSource.PlayOneShot(pickUpSound);
             }
         }
     }

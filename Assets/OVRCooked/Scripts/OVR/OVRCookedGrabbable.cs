@@ -7,8 +7,11 @@ public class OVRCookedGrabbable : OVRGrabbable
 
     [SerializeField]
     bool fixedPosition;
-
     public bool FixedPosition { get { return fixedPosition; } }
+
+    [SerializeField]
+    bool playPickUpSound = true;
+    public bool PlayPickUpSound { get { return playPickUpSound; } }
 
     protected override void Start()
     {
