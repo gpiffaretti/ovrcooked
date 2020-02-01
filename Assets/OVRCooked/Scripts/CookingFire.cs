@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class CookingFire : MonoBehaviour
 {
 
@@ -25,12 +26,20 @@ public class CookingFire : MonoBehaviour
     [SerializeField]
     AnimationCurve particleStartSizeCurve;
 
+    [SerializeField]
+    AudioClip stoveOnSound;
+    [SerializeField]
+    AudioClip stoveOffSound;
+
+    private AudioSource audioSource;
+
     private Pot currentPot;
 
     // Start is called before the first frame update
     void Start()
     {
         isOn = false;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -44,13 +53,18 @@ public class CookingFire : MonoBehaviour
     /// </summary>
     public void SetIntensity(float normalizedIntensity) 
     {
-
-
         intensity = normalizedIntensity;
 
         // hack to manually execute logic of OnTriggerExit when turning off trigger
-        if (isOn && intensity == 0f) {
+        if (isOn && intensity == 0f) // just turned off
+        {
             OnTriggerDisabled();
+            audioSource.PlayOneShot(stoveOffSound);
+        }
+
+        if (!isOn && intensity > 0f) // just turned on
+        {
+            audioSource.PlayOneShot(stoveOnSound);
         }
 
         isOn = intensity > 0f;

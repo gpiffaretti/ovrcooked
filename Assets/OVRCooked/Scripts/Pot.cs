@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Pot : MonoBehaviour
 {
     [SerializeField]
@@ -13,6 +14,11 @@ public class Pot : MonoBehaviour
 
     [SerializeField]
     bool hasFire;
+
+    [SerializeField]
+    AudioClip ingredientAddedSound;
+
+    AudioSource audioSource;
 
     /// <summary>
     /// Index for next ingredient in the <content> array
@@ -35,6 +41,7 @@ public class Pot : MonoBehaviour
     public event Action CookProgressFinished;
     public event Action PotReset;
 
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +51,8 @@ public class Pot : MonoBehaviour
 
         PotUI potUI = Instantiate<PotUI>(potUIPrefab);
         potUI.Pot = this;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Initialize() 
@@ -102,7 +111,14 @@ public class Pot : MonoBehaviour
             IngredientAdded?.Invoke(ingredientType); // trigger event
 
             if (hasFire) StartCookingProcess();
+
+            audioSource.PlayOneShot(ingredientAddedSound);
         }
+    }
+
+    public bool IsEmpty()
+    {
+        return IngredientCount == 0;
     }
 
     private bool IsFull() => IngredientCount == content.Length;

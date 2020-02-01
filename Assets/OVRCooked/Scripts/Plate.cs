@@ -30,6 +30,8 @@ public class Plate : MonoBehaviour
 
         PlateUI plateUI = Instantiate<PlateUI>(plateUIPrefab);
         plateUI.Plate = this;
+
+        content = null;
     }
 
     // Update is called once per frame
@@ -79,5 +81,10 @@ public class Plate : MonoBehaviour
 
         // trigger plate content changed event for UI
         ContentChanged?.Invoke(content);
+    }
+
+    public bool IsEmpty()
+    {
+        return content == null;
     }
 }

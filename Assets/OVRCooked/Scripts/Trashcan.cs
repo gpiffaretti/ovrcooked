@@ -3,14 +3,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(Animator))]
 public class Trashcan : MonoBehaviour
 {
     Animator animator;
+
+    AudioSource audioSource;
+
+    [SerializeField]
+    AudioClip trashedElementSound;
+    [SerializeField]
+    AudioClip trashOpenSound;
+    [SerializeField]
+    AudioClip trashCloseSound;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -19,16 +31,30 @@ public class Trashcan : MonoBehaviour
         
     }
 
+    private void OpenTrash() 
+    {
+        //Debug.Log("open lid");
+        animator.ResetTrigger("open");
+        animator.ResetTrigger("close");
+        animator.SetTrigger("open");
+        audioSource.PlayOneShot(trashOpenSound);
+    }
+
+    private void CloseTrash() 
+    {
+        //Debug.Log("close lid");
+        animator.ResetTrigger("open");
+        animator.ResetTrigger("close");
+        animator.SetTrigger("close");
+        audioSource.PlayOneShot(trashCloseSound);
+    }
+
     private void OnTriggerEnter(Collider other) 
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("potBase")
             || other.gameObject.layer == LayerMask.NameToLayer("plate"))
         {
-            Debug.Log("open lid");
-            animator.ResetTrigger("open");
-            animator.ResetTrigger("close");
-            animator.SetTrigger("open");
-            
+            OpenTrash();
         }
     }
 
@@ -37,10 +63,7 @@ public class Trashcan : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("potBase")
             || other.gameObject.layer == LayerMask.NameToLayer("plate"))
         {
-            Debug.Log("close lid");
-            animator.ResetTrigger("open");
-            animator.ResetTrigger("close");
-            animator.SetTrigger("close");
+            CloseTrash();
         }
     }
 
@@ -65,11 +88,12 @@ public class Trashcan : MonoBehaviour
         //Debug.Log($"Attempt trash plate {plate.name}");
 
         // check pot is tilted over plate (dot product with 'up' vectors)
-        bool potTilted = Vector3.Dot(plate.transform.up, Vector3.up) < 0f;
-        if (!potTilted) return;
+        bool plateTilted = Vector3.Dot(plate.transform.up, Vector3.up) < 0f;
+        if (!plateTilted || plate.IsEmpty()) return;
 
         // reset plate
         plate.Reset();
+        audioSource.PlayOneShot(trashedElementSound);
     }
 
     private void AttemptTrashContent(Pot pot)
@@ -78,10 +102,11 @@ public class Trashcan : MonoBehaviour
 
         // check pot is tilted over plate (dot product with 'up' vectors)
         bool potTilted = Vector3.Dot(pot.transform.up, Vector3.up) < 0f;
-        if (!potTilted) return;
+        if (!potTilted || pot.IsEmpty()) return;
 
         // reset pot
         pot.Reset();
+        audioSource.PlayOneShot(trashedElementSound);
 
     }
 }
