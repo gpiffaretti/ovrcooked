@@ -1,9 +1,11 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class TimeBar : MonoBehaviour
 {
     public CustomGradient gradient;
+    public event Action TimeExpired;
 
     public Image timeBar;
     public float totalTimeSeconds;
@@ -15,18 +17,18 @@ public class TimeBar : MonoBehaviour
     {
         timeLeftSeconds = totalTimeSeconds;
         InvokeRepeating(nameof(DecreaseBar), 0.0f, refreshUpdateSeconds);
-        Destroy(transform.parent.gameObject.transform.parent.gameObject, totalTimeSeconds);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void DecreaseBar()
     {
         timeLeftSeconds -= refreshUpdateSeconds;
+
+        if (timeLeftSeconds <= 0)
+        {
+            CancelInvoke(nameof(DecreaseBar));
+            TimeExpired?.Invoke();
+        }
+
         timeBar.fillAmount = timeLeftSeconds / totalTimeSeconds;
         timeBar.color = gradient.Evaluate(timeBar.fillAmount);
     }
