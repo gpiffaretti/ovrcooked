@@ -13,7 +13,9 @@ public class OrderDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponentInChildren<TimeBar>().TimeExpired += OnTimeExpired;
+        var timebar = GetComponentInChildren<TimeBar>();
+        timebar.TimeExpired += OnTimeExpired;
+        timebar.InitTimebar();
     }
 
     private void OnTimeExpired()
