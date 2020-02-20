@@ -6,6 +6,15 @@ using UnityEngine;
 public class GameUIManager : Singleton<GameUIManager>
 {
     [SerializeField]
+    GameManager gameManager;
+
+    [SerializeField]
+    Canvas menuCanvas;
+
+    [SerializeField]
+    Canvas gameStateCanvas;
+
+    [SerializeField]
     IngredientIcon[] ingredientIcons;
 
     [SerializeField]
@@ -14,10 +23,21 @@ public class GameUIManager : Singleton<GameUIManager>
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager.GameStarted += OnGameStarted;
+        gameManager.GameEnded += OnGameEnded;
     }
 
-    public Sprite GetIngredientIcon(IngredientType ingredient) 
+    private void OnGameEnded()
+    {
+        menuCanvas.gameObject.SetActive(true);
+    }
+
+    private void OnGameStarted()
+    {
+        menuCanvas.gameObject.SetActive(false);
+    }
+
+    public Sprite GetIngredientIcon(IngredientType ingredient)
     {
         foreach (IngredientIcon ingredientIcon in ingredientIcons)
         {
@@ -38,6 +58,8 @@ public class GameUIManager : Singleton<GameUIManager>
 
         throw new Exception($"Icon not found for ingredient => {cookware}");
     }
+
+
 }
 
 [Serializable]

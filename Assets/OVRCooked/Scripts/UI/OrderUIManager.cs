@@ -24,6 +24,7 @@ namespace Assets.OVRCooked.Scripts.UI
         {
             // Instantiate OrderDisplay with proper parameter
             order.OrderExpired += OnOrderExpired;
+            order.OrderDelivered += OnOrderDelivered;
             var orderDisplay = Instantiate<OrderDisplay>(orderDisplayPrefab, ordersParent.transform);
             orderDisplay.order = order;
             orderDisplay.Initialize(order);
@@ -32,6 +33,13 @@ namespace Assets.OVRCooked.Scripts.UI
         }
 
         private void OnOrderExpired(Order order)
+        {
+            var activeOrder = activeOrders.Single(x => x.order == order);
+            activeOrders.Remove(activeOrder);
+            Destroy(activeOrder.gameObject);
+        }
+
+        private void OnOrderDelivered(Order order)
         {
             var activeOrder = activeOrders.Single(x => x.order == order);
             activeOrders.Remove(activeOrder);

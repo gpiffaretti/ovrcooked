@@ -18,7 +18,7 @@ public class OrderDisplay : MonoBehaviour
 
     private void OnTimeExpired()
     {
-        this.order.ExpireOrder();
+        
     }
 
     public void Initialize(Order order)

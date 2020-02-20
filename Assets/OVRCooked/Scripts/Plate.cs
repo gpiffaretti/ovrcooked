@@ -19,8 +19,10 @@ public class Plate : MonoBehaviour
 
     [SerializeField]
     IngredientType[] content;
+    public IngredientType[] Content { get { return content; } }
 
     public event Action<IngredientType[]> ContentChanged;
+
 
     // Start is called before the first frame update
     void Start()
