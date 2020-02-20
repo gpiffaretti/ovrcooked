@@ -32,7 +32,7 @@ public class GameUIManager : Singleton<GameUIManager>
         menuCanvas.gameObject.SetActive(true);
     }
 
-    private void OnGameStarted()
+    private void OnGameStarted(float gameTimeSeconds)
     {
         menuCanvas.gameObject.SetActive(false);
     }

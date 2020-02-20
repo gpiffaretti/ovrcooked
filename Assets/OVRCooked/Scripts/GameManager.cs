@@ -1,4 +1,4 @@
-﻿using Assets.OVRCooked.Scripts.Orders;
+using Assets.OVRCooked.Scripts.Orders;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,13 +9,26 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     OrderManager orderManager;
 
-    public event Action GameStarted;
+    public event Action<float> GameStarted;
+    public event Action GamePaused; // To use in the future
     public event Action GameEnded;
+
+    [Range(120, 500)]
+    public float gameTimeSeconds = 180;
+
+    SimpleTimer gameTimer;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        AddTimerComponent();
+    }
+
+    private void AddTimerComponent() 
+    {
+        gameTimer = gameObject.AddComponent<SimpleTimer>();
+        gameTimer.SetTimer(gameTimeSeconds);
+        gameTimer.Completed += OnGameTimeCompleted;
     }
 
     // Update is called once per frame
@@ -27,10 +40,11 @@ public class GameManager : MonoBehaviour
     public void StartGame() 
     {
         // start all subsystems
+        gameTimer.StartTimer();
         orderManager.StartSpawning();
 
         // notify
-        GameStarted?.Invoke();
+        GameStarted?.Invoke(gameTimeSeconds);
     }
 
     public void EndGame() 
@@ -39,6 +53,11 @@ public class GameManager : MonoBehaviour
 
         // notify
         GameEnded?.Invoke();
+    }
+
+    private void OnGameTimeCompleted() 
+    {
+        EndGame();    
     }
 
     internal void DeliverPlate(Plate plate)

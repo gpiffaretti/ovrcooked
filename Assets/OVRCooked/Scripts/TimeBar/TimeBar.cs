@@ -15,8 +15,17 @@ public class TimeBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+    }
+
+    public void InitTimebar()
+    {
         timeLeftSeconds = totalTimeSeconds;
         InvokeRepeating(nameof(DecreaseBar), 0.0f, refreshUpdateSeconds);
+    }
+    public void InitTimebar(float time)
+    {
+        totalTimeSeconds = time;
+        InitTimebar();
     }
 
     void DecreaseBar()

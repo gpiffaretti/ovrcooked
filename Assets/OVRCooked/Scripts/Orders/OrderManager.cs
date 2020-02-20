@@ -48,11 +48,13 @@ public class OrderManager : Singleton<OrderManager>
 
     public void StartSpawning() 
     {
+        isPlaying = true;
         spawnCoroutine = StartCoroutine(SpawnOrders()); ;
     }
 
     public void StopSpawning()
     {
+        isPlaying = false;
         StopCoroutine(spawnCoroutine);
     }
 
