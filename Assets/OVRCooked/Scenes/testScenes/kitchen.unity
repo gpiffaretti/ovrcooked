@@ -377,75 +377,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2690064335832547859, guid: 8dd92a5dc877d324a8344c38d11d50bf,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2690064335832547859, guid: 8dd92a5dc877d324a8344c38d11d50bf,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2690064335832547859, guid: 8dd92a5dc877d324a8344c38d11d50bf,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2690064335832547859, guid: 8dd92a5dc877d324a8344c38d11d50bf,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4078559271671107629, guid: 8dd92a5dc877d324a8344c38d11d50bf,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4078559271671107629, guid: 8dd92a5dc877d324a8344c38d11d50bf,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4078559271671107629, guid: 8dd92a5dc877d324a8344c38d11d50bf,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4078559271671107629, guid: 8dd92a5dc877d324a8344c38d11d50bf,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6279748362700751100, guid: 8dd92a5dc877d324a8344c38d11d50bf,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6279748362700751100, guid: 8dd92a5dc877d324a8344c38d11d50bf,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6279748362700751100, guid: 8dd92a5dc877d324a8344c38d11d50bf,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6279748362700751100, guid: 8dd92a5dc877d324a8344c38d11d50bf,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6359174934050183966, guid: 8dd92a5dc877d324a8344c38d11d50bf,
         type: 3}
       propertyPath: m_Name
       value: Pot
-      objectReference: {fileID: 0}
-    - target: {fileID: 7069021451169093699, guid: 8dd92a5dc877d324a8344c38d11d50bf,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dd92a5dc877d324a8344c38d11d50bf, type: 3}
@@ -3105,7 +3040,7 @@ PrefabInstance:
     - target: {fileID: 5304890528287791384, guid: f8a8a1d34c4cbff458dcf02cfc25ffd6,
         type: 3}
       propertyPath: recipeTimeSeconds
-      value: 30
+      value: 89.6
       objectReference: {fileID: 0}
     - target: {fileID: 5304890528287791384, guid: f8a8a1d34c4cbff458dcf02cfc25ffd6,
         type: 3}

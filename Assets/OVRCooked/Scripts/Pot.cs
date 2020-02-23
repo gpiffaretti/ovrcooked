@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,8 @@ public class Pot : MonoBehaviour
     AudioClip ingredientAddedSound;
 
     AudioSource audioSource;
+
+    [SerializeField] AudioSource boilAudioSource;
 
     /// <summary>
     /// Index for next ingredient in the <content> array
@@ -110,7 +113,11 @@ public class Pot : MonoBehaviour
 
             IngredientAdded?.Invoke(ingredientType); // trigger event
 
-            if (hasFire) StartCookingProcess();
+            if (hasFire)
+            {
+                StartCookingProcess();
+                PlayBoilAudio(true);
+            }
 
             audioSource.PlayOneShot(ingredientAddedSound);
         }
@@ -143,10 +150,40 @@ public class Pot : MonoBehaviour
 
         FireChanged?.Invoke(hasFire); // trigger event
 
-        if (hasFire && IngredientCount > 0) 
+        if (hasFire && IngredientCount > 0)
         {
             StartCookingProcess();
+
+            PlayBoilAudio(true);
         }
+        else {
+            PlayBoilAudio(false);
+        }
+
+        
+    }
+
+    void PlayBoilAudio(bool play) 
+    {
+        if (play)
+        {
+            if (!boilAudioSource.isPlaying)
+            {
+                boilAudioSource.volume = 0f;
+                boilAudioSource.Play();
+                boilAudioSource.DOFade(1f, 0.5f);
+            }
+        }
+        else 
+        {
+            if (boilAudioSource.isPlaying)
+            {
+                boilAudioSource.DOFade(0f, 0.5f).OnComplete(() => {
+                    boilAudioSource.Stop();
+                });
+            }
+        }
+        
     }
 
     private void OnTriggerEnter(Collider other)
