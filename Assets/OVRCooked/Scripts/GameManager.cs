@@ -6,12 +6,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    private int points;
+
     [SerializeField]
     OrderManager orderManager;
 
     public event Action<float> GameStarted;
     public event Action GamePaused; // To use in the future
     public event Action GameEnded;
+    public event Action<int> PointsChanged;
 
     [Range(120, 500)]
     public float gameTimeSeconds = 180;
@@ -22,6 +25,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         AddTimerComponent();
+        StartCoroutine(IncreasePointsRandomly());
     }
 
     private void AddTimerComponent() 
@@ -60,6 +64,26 @@ public class GameManager : MonoBehaviour
         EndGame();    
     }
 
+    private void AddPoints(int points)
+    {
+        var result = this.points - points;
+        if (result < 0)
+            this.points = 0;
+        else
+            this.points = result;
+
+        PointsChanged?.Invoke(points);
+    }
+
+    private IEnumerator IncreasePointsRandomly()
+    {
+        while(true)
+        {
+            AddPoints(100);
+            yield return new WaitForSeconds(2.0f);
+        }
+    }
+
     internal void DeliverPlate(Plate plate)
     {
         Order matchedOrder;
@@ -67,12 +91,14 @@ public class GameManager : MonoBehaviour
         {
             // success! add score based on (completed order + time left)
             Debug.Log($"Delivery complete with {matchedOrder.TimeLeft} seconds left!!!");
+            AddPoints(100);
         }
         else
         {
             // plate didn't match any order!
             // penalize score
             Debug.Log("Delivery didn't match any order!!!");
+            AddPoints(-100);
         }
     }
 }
