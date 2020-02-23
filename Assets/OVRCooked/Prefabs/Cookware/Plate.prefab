@@ -205,12 +205,17 @@ PrefabInstance:
     - target: {fileID: -6941226152010992466, guid: e1fdae427b01fd943a1f772be1e006b4,
         type: 3}
       propertyPath: m_LightProbeUsage
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -6941226152010992466, guid: e1fdae427b01fd943a1f772be1e006b4,
         type: 3}
       propertyPath: m_ReflectionProbeUsage
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6941226152010992466, guid: e1fdae427b01fd943a1f772be1e006b4,
+        type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e1fdae427b01fd943a1f772be1e006b4,
         type: 3}
@@ -271,6 +276,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: m_Plate
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206372887119798679, guid: e1fdae427b01fd943a1f772be1e006b4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1fdae427b01fd943a1f772be1e006b4, type: 3}
