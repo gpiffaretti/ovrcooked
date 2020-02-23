@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
         // start all subsystems
         gameTimer.StartTimer();
         orderManager.StartSpawning();
-        StartCoroutine(IncreasePointsRandomly()); // Workaround to visualize points changing
+        //StartCoroutine(IncreasePointsRandomly()); // Workaround to visualize points changing
 
         // notify
         GameStarted?.Invoke(gameTimeSeconds);
