@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -361,6 +361,7 @@ GameObject:
   - component: {fileID: 403001991}
   - component: {fileID: 403001990}
   - component: {fileID: 403001994}
+  - component: {fileID: 403001995}
   m_Layer: 5
   m_Name: ButtonStart
   m_TagString: Untagged
@@ -503,6 +504,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aa05a1e16f335a48a748585a5194f2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &403001995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403001988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd64642f282bab4ba33b5f066b4ec07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &552142076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -510,6 +523,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 644684265202356667, guid: 9d9dce9b47f657041a13ad1cb10dcbbe,
+        type: 3}
+      propertyPath: m_Text
+      value: 00:00
+      objectReference: {fileID: 0}
     - target: {fileID: 4207090016292589730, guid: 9d9dce9b47f657041a13ad1cb10dcbbe,
         type: 3}
       propertyPath: m_Name
@@ -619,6 +637,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4235160778468697803, guid: 9d9dce9b47f657041a13ad1cb10dcbbe,
+        type: 3}
+      propertyPath: m_Text
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d9dce9b47f657041a13ad1cb10dcbbe, type: 3}

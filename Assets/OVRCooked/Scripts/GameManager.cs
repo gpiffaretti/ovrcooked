@@ -25,7 +25,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         AddTimerComponent();
-        StartCoroutine(IncreasePointsRandomly());
     }
 
     private void AddTimerComponent() 
@@ -46,6 +45,7 @@ public class GameManager : MonoBehaviour
         // start all subsystems
         gameTimer.StartTimer();
         orderManager.StartSpawning();
+        StartCoroutine(IncreasePointsRandomly()); // Workaround to visualize points changing
 
         // notify
         GameStarted?.Invoke(gameTimeSeconds);
@@ -66,13 +66,13 @@ public class GameManager : MonoBehaviour
 
     private void AddPoints(int points)
     {
-        var result = this.points - points;
+        var result = this.points + points;
         if (result < 0)
             this.points = 0;
         else
             this.points = result;
 
-        PointsChanged?.Invoke(points);
+        PointsChanged?.Invoke(this.points);
     }
 
     private IEnumerator IncreasePointsRandomly()

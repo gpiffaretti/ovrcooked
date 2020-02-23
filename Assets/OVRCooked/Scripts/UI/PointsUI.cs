@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +13,25 @@ public class PointsUI : MonoBehaviour
     void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
+        gameManager.GameStarted += OnGameStarted;
         gameManager.PointsChanged += OnPointsChanged;
+        gameManager.GameEnded += OnGameEnded;
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        ResetPoints();
+    }
+
+    private void OnGameStarted(float timeLeft)
+    {
+        ResetPoints();
+    }
+
+    private void ResetPoints()
+    {
+        pointsText.text = $"0";
     }
 
     void OnPointsChanged(int newPoints)
@@ -23,9 +39,13 @@ public class PointsUI : MonoBehaviour
         StartCoroutine(IncreasePoints(newPoints));
     }
 
+    private void OnGameEnded()
+    {
+    }
+
     IEnumerator IncreasePoints(int newPoints)
     {
-        float duration = 0.8f;
+        float duration = 0.5f;
 
         for (float timer = 0; timer < duration; timer += Time.deltaTime)
         {
@@ -34,12 +54,8 @@ public class PointsUI : MonoBehaviour
             pointsText.text = $"{score}";
             yield return null;
         }
-    }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+        points = newPoints;
     }
 
     // Update is called once per frame

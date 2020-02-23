@@ -53,5 +53,6 @@ public class ClockUI : MonoBehaviour
 
     void OnGameEndedHandler()
     {
+        CancelInvoke(nameof(UpdateTimeLeft));
     }
 }
