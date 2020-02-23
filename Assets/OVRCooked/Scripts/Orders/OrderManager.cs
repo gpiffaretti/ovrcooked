@@ -120,7 +120,7 @@ public class OrderManager : Singleton<OrderManager>
 
             for (int j = 0; j < ing2.Length; j++)
             {
-                if (currentIngredient == ing2[j]) 
+                if (!matchedIngredients[j] && currentIngredient == ing2[j]) 
                 {
                     matchedIngredients[j] = true;
                     break;
@@ -129,7 +129,7 @@ public class OrderManager : Singleton<OrderManager>
         }
 
         // if any of the ingredients of the second array wasn't matched, return false, otherwise it's a match
-        return matchedIngredients.Any(m => !m);
+        return !matchedIngredients.Any(m => !m);
         
         // TODO: can be improved so that it returns false exactly after one element wasn't found... no need to keep matching.
     }
