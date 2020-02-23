@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b710845c48e1c4b44928dfba09d3fa2b, type: 3}
-  m_Name: Onion Soup
+  m_Name: Carrot Soup
   m_EditorClassIdentifier: 
   name: Onion Soup
   secondsToCook: 45
   recipeArtwork: {fileID: 21300000, guid: 8976ed6c5d5993b4c8108cb6b4d86b05, type: 3}
-  ingredients: 000000000000000000000000
+  ingredients: 010000000100000001000000
   cookwares: 00000000

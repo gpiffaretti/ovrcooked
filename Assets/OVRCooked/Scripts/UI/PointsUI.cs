@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,8 @@ public class PointsUI : MonoBehaviour
 
     [SerializeField]
     Text pointsText;
+
+    Tweener pointTween;
 
     void Awake()
     {
@@ -36,31 +39,28 @@ public class PointsUI : MonoBehaviour
 
     void OnPointsChanged(int newPoints)
     {
-        StartCoroutine(IncreasePoints(newPoints));
+        IncreasePoints(newPoints);
     }
 
     private void OnGameEnded()
     {
     }
 
-    IEnumerator IncreasePoints(int newPoints)
+    void IncreasePoints(int newPoints)
     {
-        float duration = 0.5f;
+        float duration = 2f;
 
-        for (float timer = 0; timer < duration; timer += Time.deltaTime)
-        {
-            float progress = timer / duration;
-            int score = (int)Mathf.Lerp(points, newPoints, progress);
-            pointsText.text = $"{score}";
-            yield return null;
-        }
+        int currentScore = this.points;
 
-        points = newPoints;
+        if (pointTween != null) pointTween.Kill();
+        pointTween = DOTween.To(() => currentScore, x => currentScore = x, newPoints, duration).SetEase(Ease.OutExpo)
+            .OnUpdate(() => {
+                pointsText.text = currentScore.ToString();
+            })
+            .OnComplete(() => {
+                points = newPoints;
+            });
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
