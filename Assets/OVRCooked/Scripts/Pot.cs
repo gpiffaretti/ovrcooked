@@ -188,12 +188,10 @@ public class Pot : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("pot entered trigger");
-
         if (other.gameObject.layer == LayerMask.NameToLayer("ingredient"))
         {
             AddIngredient(other.GetComponent<Ingredient>());
-            Destroy(other);
+            Destroy(other.gameObject);
         }
     }
 

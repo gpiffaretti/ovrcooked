@@ -140,6 +140,6 @@ public class OrderManager : Singleton<OrderManager>
 
     Recipe GetRandomRecipe()
     {
-        return recipes[UnityEngine.Random.Range(0, recipes.Length-1)];
+        return recipes[UnityEngine.Random.Range(0, recipes.Length)];
     }
 }

@@ -1,4 +1,5 @@
 using Assets.OVRCooked.Scripts.Orders;
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,6 +11,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     OrderManager orderManager;
+
+    [SerializeField]
+    AudioSource levelMusic;
 
     public event Action<float> GameStarted;
     public event Action GamePaused; // To use in the future
@@ -45,6 +49,7 @@ public class GameManager : MonoBehaviour
         // start all subsystems
         gameTimer.StartTimer();
         orderManager.StartSpawning();
+        levelMusic.Play();
         //StartCoroutine(IncreasePointsRandomly()); // Workaround to visualize points changing
 
         // notify
@@ -55,6 +60,9 @@ public class GameManager : MonoBehaviour
     {
         // set all subsystems to paused or finished state
         orderManager.StopSpawning();
+        levelMusic.DOFade(0.0f, 1f).OnComplete(() => { // fade out music
+            levelMusic.Stop();
+        });
 
         // notify
         GameEnded?.Invoke();
