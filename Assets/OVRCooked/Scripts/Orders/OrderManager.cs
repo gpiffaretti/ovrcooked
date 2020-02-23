@@ -22,6 +22,9 @@ public class OrderManager : Singleton<OrderManager>
     [Range(30, 180)]
     float recipeTimeSeconds = 45;
 
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip clipOrderExpired;
+
     List<Order> activeOrders = new List<Order>();
 
     private bool isPlaying;
@@ -79,6 +82,7 @@ public class OrderManager : Singleton<OrderManager>
     private void OnOrderExpired(Order order)
     {
         activeOrders.Remove(order);
+        audioSource.PlayOneShot(clipOrderExpired);
     }
 
     private void SortOrdersByTime() 
