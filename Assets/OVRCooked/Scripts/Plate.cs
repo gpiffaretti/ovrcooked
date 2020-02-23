@@ -97,7 +97,7 @@ public class Plate : MonoBehaviour
     {
         foodObject.SetActive(false);
         hasFood = false;
-        IngredientType[] content = null;
+        content = null;
 
         // trigger plate content changed event for UI
         ContentChanged?.Invoke(content);

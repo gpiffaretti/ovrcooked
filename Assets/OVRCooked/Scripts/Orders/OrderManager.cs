@@ -13,14 +13,20 @@ public class OrderManager : Singleton<OrderManager>
     Recipe[] recipes;
 
     [SerializeField]
-    int maxConcurrentOrders = 3;
+    int maxConcurrentOrders = 4;
 
     [SerializeField]
     [Range(10,60)]
-    float waitForSpawningSeconds = 30;
+    float waitForSpawningSecondsMin = 25;
+    [SerializeField]
+    [Range(10, 60)]
+    float waitForSpawningSecondsMax = 45;
     [SerializeField]
     [Range(30, 180)]
-    float recipeTimeSeconds = 45;
+    float recipeExpireTimeSecondsMin = 45;
+    [SerializeField]
+    [Range(30, 180)]
+    float recipeExpireTimeSecondsMax = 60;
 
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip clipOrderExpired;
@@ -65,17 +71,16 @@ public class OrderManager : Singleton<OrderManager>
     {
         while(true)
         {
-            while(activeOrders.Count < maxConcurrentOrders)
+            if (activeOrders.Count < maxConcurrentOrders) 
             {
-                var generatedOrder = new Order(GetRandomRecipe(), recipeTimeSeconds);
+                var generatedOrder = new Order(GetRandomRecipe(), UnityEngine.Random.Range(recipeExpireTimeSecondsMin,recipeExpireTimeSecondsMax));
                 generatedOrder.OrderExpired += OnOrderExpired;
                 activeOrders.Add(generatedOrder);
                 OrderCreated?.Invoke(generatedOrder);
+            }            
+            
 
-                yield return new WaitForSeconds(3);
-            }
-
-            yield return new WaitForSeconds(waitForSpawningSeconds);
+            yield return new WaitForSeconds(UnityEngine.Random.Range(waitForSpawningSecondsMin, waitForSpawningSecondsMax));
         }
     }
 

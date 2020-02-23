@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     AudioSource levelMusic;
 
+    private float backgoundMusicVolume;
+
     public event Action<float> GameStarted;
     public event Action GamePaused; // To use in the future
     public event Action GameEnded;
@@ -29,6 +31,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         AddTimerComponent();
+
+        backgoundMusicVolume = levelMusic.volume;
     }
 
     private void AddTimerComponent() 
@@ -50,6 +54,8 @@ public class GameManager : MonoBehaviour
         gameTimer.StartTimer();
         orderManager.StartSpawning();
         levelMusic.Play();
+        levelMusic.volume = 0f;
+        levelMusic.DOFade(backgoundMusicVolume, 4f); // fade in music
         //StartCoroutine(IncreasePointsRandomly()); // Workaround to visualize points changing
 
         // notify
