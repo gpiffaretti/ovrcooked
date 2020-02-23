@@ -11,6 +11,10 @@ public class MouseLeftClick : MonoBehaviour
     void Start()
     {
         button = GetComponent<Button>();
+
+        #if !UNITY_EDITOR
+        Destroy(this);
+        #endif
     }
 
     // Update is called once per frame

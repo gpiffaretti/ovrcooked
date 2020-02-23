@@ -108,7 +108,7 @@ public class OrderManager : Singleton<OrderManager>
 
     private bool IngredientMatch(IngredientType[] ing1, IngredientType[] ing2) 
     {
-        if (ing1.Length != ing2.Length) return false;
+        if (ing1 == null || ing2 == null || ing1.Length != ing2.Length) return false;
 
         // we want to flag the elements in the second array that have been already been matched with one in the first array
         bool[] matchedIngredients = new bool[ing2.Length];

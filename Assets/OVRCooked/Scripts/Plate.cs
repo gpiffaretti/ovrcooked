@@ -42,6 +42,24 @@ public class Plate : MonoBehaviour
         
     }
 
+    public void EmptyAndResetPlate() 
+    {
+        // reset plate content
+        foodObject.SetActive(false);
+        content = null;
+        ContentChanged?.Invoke(content);
+        // if object is grabbed, force release before resetting, otherwise grab system will keep controlling its transform
+        OVRCookedGrabbable g = GetComponent<OVRCookedGrabbable>();
+        if (g.isGrabbed)
+        {
+            g.grabbedBy.ForceRelease(g);
+        }
+
+        // reset plate to original position
+        GetComponent<ResettableTransform>().Reset();
+        
+    }
+
     private void OnTriggerStay(Collider other)
     {
         // can be improved, we're getting this event for each collider in the pot
@@ -53,7 +71,7 @@ public class Plate : MonoBehaviour
 
     private void AttemptFoodTransfer(Pot pot)
     {
-        Debug.Log($"Attempt food transfer from {pot.name}");
+        //Debug.Log($"Attempt food transfer from {pot.name}");
         
         // check empty plate and pot food ready
         if (hasFood || !pot.IsFoodReady()) return;

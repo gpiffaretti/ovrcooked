@@ -35,13 +35,13 @@ public class HapticsHelper
 
     private static IEnumerator VibrationCoroutine(OVRInput.Controller controller, float duration, float frequency, float amplitude)
     {
-        Debug.LogFormat("Haptics: {0}", controller.ToString());
-
+        Debug.LogFormat("Haptics start: {0} - {1}s - freq {2} - timestamp {3}", controller.ToString(), duration, frequency, Time.time);
         OVRInput.SetControllerVibration(frequency, amplitude, controller);
 
         yield return new WaitForSeconds(duration);
 
-        OVRInput.SetControllerVibration(0f, 0f);
+        Debug.LogFormat("Haptics stop: {0} - {1}s - freq {2} - timestamp {3}", controller.ToString(), duration, frequency, Time.time);
+        OVRInput.SetControllerVibration(0f, 0f, controller);
     }
 
     public enum Duration

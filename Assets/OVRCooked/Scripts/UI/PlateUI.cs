@@ -78,8 +78,6 @@ public class PlateUI : MonoBehaviour
 
     private void OnContentChangedHandler(IngredientType[] ingredients)
     {
-        
-
         for (int i = 0; i < ingredientIcons.Length; i++)
         {
             if (ingredients == null)

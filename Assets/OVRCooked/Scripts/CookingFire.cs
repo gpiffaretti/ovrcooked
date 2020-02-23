@@ -86,7 +86,7 @@ public class CookingFire : MonoBehaviour
         {
             currentPot = other.gameObject.GetComponentInParent<Pot>();
             currentPot.ToggleFire(true);
-            Debug.Log("pot-fire trigger enter");
+            //Debug.Log("pot-fire trigger enter");
 
         }
     }
