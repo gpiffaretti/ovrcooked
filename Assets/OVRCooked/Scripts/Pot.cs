@@ -30,7 +30,7 @@ public class Pot : MonoBehaviour
 
     public int IngredientCount { get { return contentCurrentIndex; } }
 
-    const float SecondsForCookCompletion = 10f;
+    const float SecondsForCookCompletion = 20f;
     const float CookingSpeed = 1f / SecondsForCookCompletion; // Speed => 1/seconds
 
     private bool cookProcessStarted;

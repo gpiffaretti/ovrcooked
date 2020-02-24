@@ -24,6 +24,7 @@ public class DeliveryTable : MonoBehaviour
         {
             Debug.Log("Delivery table detected plate!");
             Plate plate = other.GetComponentInParent<Plate>();
+            if (plate.IsEmpty()) return; // this will run multiple times because of multiple colliders
             bool success = gameManager.DeliverPlate(plate);
 
             audioSource.PlayOneShot(success? clipSuccessfulDelivery : clipFailedDelivery);
