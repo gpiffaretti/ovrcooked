@@ -82,7 +82,7 @@ public class OVRGrabber : MonoBehaviour
         get { return m_grabbedObj; }
     }
 
-	public void ForceRelease(OVRGrabbable grabbable)
+    public void ForceRelease(OVRGrabbable grabbable, bool removeGrabCandidate = false)
     {
         bool canRelease = (
             (m_grabbedObj != null) &&
@@ -90,6 +90,11 @@ public class OVRGrabber : MonoBehaviour
         );
         if (canRelease)
         {
+            if (removeGrabCandidate) {
+                Debug.Log("Remove grabbable from grab candidates");
+                m_grabCandidates.Remove(grabbable);
+            }
+                
             GrabEnd();
         }
     }

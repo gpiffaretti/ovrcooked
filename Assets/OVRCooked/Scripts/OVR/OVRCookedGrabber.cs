@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
@@ -24,9 +26,15 @@ public class OVRCookedGrabber : OVRGrabber
         OVRCookedGrabbable closestGrabbable = null;
         Collider closestGrabbableCollider = null;
 
+        // clean grab candidates in case it has missing references
+        var itemsToRemove = m_grabCandidates.Where(f => f.Key == null).ToArray();
+        foreach (var item in itemsToRemove)
+            m_grabCandidates.Remove(item.Key);
+
         // Iterate grab candidates and find the closest grabbable candidate
         foreach (OVRGrabbable grabbable in m_grabCandidates.Keys)
         {
+            if (grabbable == null) continue;
             bool canGrab = !(grabbable.isGrabbed && !grabbable.allowOffhandGrab);
             if (!canGrab)
             {
@@ -37,7 +45,9 @@ public class OVRCookedGrabber : OVRGrabber
             {
                 Collider grabbableCollider = grabbable.grabPoints[j];
                 // Store the closest grabbable
-                Vector3 closestPointOnBounds = grabbableCollider.ClosestPointOnBounds(m_gripTransform.position);
+                Vector3 closestPointOnBounds = Vector3.zero;
+                closestPointOnBounds = grabbableCollider.ClosestPointOnBounds(m_gripTransform.position);
+                
                 float grabbableMagSq = (m_gripTransform.position - closestPointOnBounds).sqrMagnitude;
                 if (grabbableMagSq < closestMagSq)
                 {

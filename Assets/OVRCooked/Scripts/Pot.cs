@@ -190,6 +190,11 @@ public class Pot : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("ingredient"))
         {
+            OVRCookedGrabbable g = other.GetComponent<OVRCookedGrabbable>();
+            if (g.isGrabbed) {
+                Debug.Log($"Force release {g.name}");
+                g.grabbedBy.ForceRelease(g, true);
+            }
             AddIngredient(other.GetComponent<Ingredient>());
             Destroy(other.gameObject);
         }
