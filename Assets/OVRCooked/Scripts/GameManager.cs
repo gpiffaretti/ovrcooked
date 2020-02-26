@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     AudioSource levelMusic;
 
+    [SerializeField]
+    AudioSource introMusic;
+
     private float backgoundMusicVolume;
 
     public event Action<float> GameStarted;
@@ -33,6 +36,7 @@ public class GameManager : MonoBehaviour
         AddTimerComponent();
 
         backgoundMusicVolume = levelMusic.volume;
+        introMusic.Play();
     }
 
     private void AddTimerComponent() 
@@ -50,6 +54,8 @@ public class GameManager : MonoBehaviour
 
     public void StartGame() 
     {
+        introMusic.Stop();
+
         // start all subsystems
         gameTimer.StartTimer();
         orderManager.StartSpawning();
